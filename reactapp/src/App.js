@@ -13,6 +13,7 @@ import States2 from './Components/StateDemo2';
 import Employee from './Components/Employee';
 import EventBinding from './Components/EventBinding';
 import MasterComponent from './Components/MasterComponent';
+import ConditionalRendering from './Components/ConditionalRendering';
 
 
 export default class App extends Component {
@@ -98,8 +99,9 @@ export default class App extends Component {
             <EventBinding></EventBinding>
             <br/>
             <MasterComponent></MasterComponent>
+            <br/>
+            <ConditionalRendering></ConditionalRendering>
 
-            
                 {contents}
             </div>
         );
