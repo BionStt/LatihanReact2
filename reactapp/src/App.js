@@ -11,6 +11,8 @@ import Product6 from './Components/Product6';
 import States from './Components/StateDemo';
 import States2 from './Components/StateDemo2';
 import Employee from './Components/Employee';
+import EventBinding from './Components/EventBinding';
+import MasterComponent from './Components/MasterComponent';
 
 
 export default class App extends Component {
@@ -92,7 +94,12 @@ export default class App extends Component {
               <States2/>
               <br/>
               <Employee personalinfo={personalinfo} proffessionalinfo={proffessionalinfo}></Employee>
+            <br/>
+            <EventBinding></EventBinding>
+            <br/>
+            <MasterComponent></MasterComponent>
 
+            
                 {contents}
             </div>
         );
