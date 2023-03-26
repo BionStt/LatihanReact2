@@ -5,6 +5,7 @@ class ConditionalRendering extends React.Component{
         super(props);
         this.state = {
             IsLoggedIn:true
+            // IsLoggedIn:false
         };
     }
 
@@ -17,16 +18,23 @@ class ConditionalRendering extends React.Component{
     // };
 
     //dibwh ini gunakan element variable bandingkan dengan diatas
-    render(){
-        let message;
-        if(this.state.IsLoggedIn){
-                    message= <div>Welcome User</div>;
-                }else{
-                    message= <div>You need To Login</div>;
-                }
+    // render(){
+    //     let message;
+    //     if(this.state.IsLoggedIn){
+    //                 message= <div>Welcome User</div>;
+    //             }else{
+    //                 message= <div>You need To Login</div>;
+    //             }
 
-        return message;
+    //     return message;
+    // };
+
+
+    //dibwh ini gunakan ternary operator
+    render(){
+        return this.state.IsLoggedIn? <div>Welcome User</div> :"";
     };
+    
 }
 
 

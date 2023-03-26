@@ -14,6 +14,16 @@ import Employee from './Components/Employee';
 import EventBinding from './Components/EventBinding';
 import MasterComponent from './Components/MasterComponent';
 import ConditionalRendering from './Components/ConditionalRendering';
+import EmployeeList from './Components/EmployeelistWithArrayIndex';
+import EmployeeList2 from './Components/EmployeeListWithArrayMap';
+import EmployeeList3 from './Components/EmployeeListArrayKeyValuePair';
+import EmployeeListParentComponent from './Components/EmployeeListParentComponent';
+import EmployeeListWithKey from './Components/EmployeeListWithKey';
+import UserForm from './Components/ContohForm';
+import UserForm2 from './Components/UserFormComponent';
+import UserFormWithSelect from './Components/UserFormWithSelect';
+import UserFormWithMultipleSelect from './Components/UserFormWithMultipleSelect';
+import UserFormWithMultipleSelectAndArray from './Components/UserFormWithMultipleSelectAndArray';
 
 
 export default class App extends Component {
@@ -101,8 +111,30 @@ export default class App extends Component {
             <MasterComponent></MasterComponent>
             <br/>
             <ConditionalRendering></ConditionalRendering>
+            <br/>
+             <EmployeeList></EmployeeList>
+             <br/>
+             <EmployeeList2></EmployeeList2>
+            <br/>
+            <EmployeeList3></EmployeeList3>
+            <br/>
+            <EmployeeListParentComponent></EmployeeListParentComponent>
+            <br/>
+            <EmployeeListWithKey></EmployeeListWithKey>
+            <br/>
+            <UserForm></UserForm>
+            <br/>
+            <UserForm2></UserForm2>
+             <br/>
+            <UserFormWithSelect></UserFormWithSelect>
+            <br/>
+            <UserFormWithMultipleSelect></UserFormWithMultipleSelect>
+            <br/>
+            <UserFormWithMultipleSelectAndArray></UserFormWithMultipleSelectAndArray>
+            <br/>
 
-                {contents}
+
+             {contents}
             </div>
         );
     }
