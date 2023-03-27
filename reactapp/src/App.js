@@ -24,6 +24,11 @@ import UserForm2 from './Components/UserFormComponent';
 import UserFormWithSelect from './Components/UserFormWithSelect';
 import UserFormWithMultipleSelect from './Components/UserFormWithMultipleSelect';
 import UserFormWithMultipleSelectAndArray from './Components/UserFormWithMultipleSelectAndArray';
+import Fragments from './Components/Fragment';
+import Fragments2 from './Components/Fragment2';
+import Fragments3 from './Components/Fragment3';
+import Calculation from './Components/Calculation';
+import CalculationWithPureComponent from './Components/CalculationWithPureComponent';
 
 
 export default class App extends Component {
@@ -132,7 +137,17 @@ export default class App extends Component {
             <br/>
             <UserFormWithMultipleSelectAndArray></UserFormWithMultipleSelectAndArray>
             <br/>
-
+            <Fragments></Fragments>
+            <br/>
+            <Fragments2></Fragments2>
+            <br/>
+            <Fragments3></Fragments3>
+            <br/>
+            <Calculation></Calculation>
+            <br/>
+            <CalculationWithPureComponent></CalculationWithPureComponent>
+            <br/>
+            <br/>
 
              {contents}
             </div>
