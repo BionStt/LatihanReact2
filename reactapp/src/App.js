@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import Addition from './Components/Addition';
 import Addition2 from './Components/Addition2';
 import Sum from './Components/Sum';
@@ -41,6 +42,14 @@ import { UserProvider,ThemeProvider } from './Components/UserContext';
 import DisplayList from './Components/DisplayList';
 import DisplayListWithAxios from './Components/DisplayListWithAxios';
 import UserFormPostWithAxios from './Components/UserFormPostWithAxios';
+import MathClass from './Components/MathClass';
+import MathFunction from './Components/MathFunction';
+import ParentComponentForMemo from './Components/ParentComponentForMemo';
+import CompanyListUsingTableRow from './Components/CompanyListUsingTableRow';
+import EmployeeListUsingTableRow from './Components/EmployeeListUsingTableRow';
+import Toastr from './Components/Toastr' ; 
+import CustomToastr from './Components/CustomToastr' ; 
+import AnimationToastr from './Components/AnimationToastr' ; 
 
 
 export default class App extends Component {
@@ -184,6 +193,23 @@ export default class App extends Component {
                 <DisplayListWithAxios></DisplayListWithAxios>
                 <br/>
                 <UserFormPostWithAxios></UserFormPostWithAxios>
+                <br/>
+                <MathClass></MathClass>
+                <br/>
+                <MathFunction></MathFunction>
+                <br/>
+                <ParentComponentForMemo></ParentComponentForMemo>
+                <br/>
+                <h1>Company List</h1>    
+                   <CompanyListUsingTableRow></CompanyListUsingTableRow>    
+                     <h1> Employee List</h1>    
+                     <EmployeeListUsingTableRow></EmployeeListUsingTableRow>       
+                <br/>
+                <Toastr></Toastr>
+                <br/>
+                <CustomToastr></CustomToastr>
+                <br/>
+                <AnimationToastr></AnimationToastr>
                 <br/>
 
              {contents}
