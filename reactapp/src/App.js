@@ -29,6 +29,18 @@ import Fragments2 from './Components/Fragment2';
 import Fragments3 from './Components/Fragment3';
 import Calculation from './Components/Calculation';
 import CalculationWithPureComponent from './Components/CalculationWithPureComponent';
+import Tooltip from './Components/Tooltip';
+import TooltipWithErrorBoundary from './Components/TooltipWithErrorBoundary';
+import ErrorBoundary from './Components/ErrorBoundary';   
+import Movement from './Components/Movement';
+import MovementMonkey from './Components/MovementMonkey';
+import Monkey from './Components/Monkey';
+import MasterComponentForContext from './Components/MasterComponentForContext';
+// import {UserProvider} from './Components/UserContext';
+import { UserProvider,ThemeProvider } from './Components/UserContext';  
+import DisplayList from './Components/DisplayList';
+import DisplayListWithAxios from './Components/DisplayListWithAxios';
+import UserFormPostWithAxios from './Components/UserFormPostWithAxios';
 
 
 export default class App extends Component {
@@ -89,6 +101,7 @@ export default class App extends Component {
             : App.renderForecastsTable(this.state.forecasts);
 
         return (
+            <ErrorBoundary>    
             <div>
                 <h1 id="tabelLabel" >Weather forecast</h1>
                 <p>This component demonstrates fetching data from the server.</p>
@@ -106,51 +119,76 @@ export default class App extends Component {
                 <p>klik diangka ini maka akan berubah atau bertambah nilainya</p>
                 <States/>
                
-              <p>klik counter dong</p>
-              <States2/>
-              <br/>
-              <Employee personalinfo={personalinfo} proffessionalinfo={proffessionalinfo}></Employee>
-            <br/>
-            <EventBinding></EventBinding>
-            <br/>
-            <MasterComponent></MasterComponent>
-            <br/>
-            <ConditionalRendering></ConditionalRendering>
-            <br/>
-             <EmployeeList></EmployeeList>
-             <br/>
-             <EmployeeList2></EmployeeList2>
-            <br/>
-            <EmployeeList3></EmployeeList3>
-            <br/>
-            <EmployeeListParentComponent></EmployeeListParentComponent>
-            <br/>
-            <EmployeeListWithKey></EmployeeListWithKey>
-            <br/>
-            <UserForm></UserForm>
-            <br/>
-            <UserForm2></UserForm2>
-             <br/>
-            <UserFormWithSelect></UserFormWithSelect>
-            <br/>
-            <UserFormWithMultipleSelect></UserFormWithMultipleSelect>
-            <br/>
-            <UserFormWithMultipleSelectAndArray></UserFormWithMultipleSelectAndArray>
-            <br/>
-            <Fragments></Fragments>
-            <br/>
-            <Fragments2></Fragments2>
-            <br/>
-            <Fragments3></Fragments3>
-            <br/>
-            <Calculation></Calculation>
-            <br/>
-            <CalculationWithPureComponent></CalculationWithPureComponent>
-            <br/>
-            <br/>
+                <p>klik counter dong</p>
+                <States2/>
+                <br/>
+                <Employee personalinfo={personalinfo} proffessionalinfo={proffessionalinfo}></Employee>
+                <br/>
+                <EventBinding></EventBinding>
+                <br/>
+                <MasterComponent></MasterComponent>
+                <br/>
+                <ConditionalRendering></ConditionalRendering>
+                <br/>
+                <EmployeeList></EmployeeList>
+                <br/>
+                <EmployeeList2></EmployeeList2>
+                <br/>
+                <EmployeeList3></EmployeeList3>
+                <br/>
+                <EmployeeListParentComponent></EmployeeListParentComponent>
+                <br/>
+                <EmployeeListWithKey></EmployeeListWithKey>
+                <br/>
+                <UserForm></UserForm>
+                <br/>
+                <UserForm2></UserForm2>
+                <br/>
+                <UserFormWithSelect></UserFormWithSelect>
+                <br/>
+                <UserFormWithMultipleSelect></UserFormWithMultipleSelect>
+                <br/>
+                <UserFormWithMultipleSelectAndArray></UserFormWithMultipleSelectAndArray>
+                <br/>
+                <Fragments></Fragments>
+                <br/>
+                <Fragments2></Fragments2>
+                <br/>
+                <Fragments3></Fragments3>
+                <br/>
+                <Calculation></Calculation>
+                <br/>
+                <CalculationWithPureComponent></CalculationWithPureComponent>
+                <br/>
+                <Tooltip></Tooltip>
+                <br/>
+                {/* cek didlm komponen bawa ini utk liat munculkan error  */}
+                <TooltipWithErrorBoundary></TooltipWithErrorBoundary> 
+                <br/>
+                <Movement></Movement>
+                <br/>
+                <MovementMonkey render={({x,y}) =>  (  
+                        <Monkey Movement={{x,y}}/>  
+                    )}/>  
+                <br/>
+                <MasterComponentForContext></MasterComponentForContext>
+                <br/>
+                <UserProvider value="New Sutanto">  
+                    <ThemeProvider value="red">  
+                    <MasterComponentForContext />  
+                    </ThemeProvider>  
+                </UserProvider>  
+                <br/>
+                <DisplayList></DisplayList>
+                <br/>
+                <DisplayListWithAxios></DisplayListWithAxios>
+                <br/>
+                <UserFormPostWithAxios></UserFormPostWithAxios>
+                <br/>
 
              {contents}
             </div>
+            </ErrorBoundary>    
         );
     }
 
