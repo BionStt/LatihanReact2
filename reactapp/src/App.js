@@ -50,6 +50,10 @@ import EmployeeListUsingTableRow from './Components/EmployeeListUsingTableRow';
 import Toastr from './Components/Toastr' ; 
 import CustomToastr from './Components/CustomToastr' ; 
 import AnimationToastr from './Components/AnimationToastr' ; 
+import Sweetalertdemo from './Components/Sweetalertdemo' ; 
+import Toggle from './Components/Toggle' ; 
+import ChildForToggle from './Components/ChildForToggle' ; 
+// import Hideshow from './Components/Hideshow' ; 
 
 
 export default class App extends Component {
@@ -210,6 +214,15 @@ export default class App extends Component {
                 <CustomToastr></CustomToastr>
                 <br/>
                 <AnimationToastr></AnimationToastr>
+                <br/>
+                <Sweetalertdemo></Sweetalertdemo>
+                <br/>
+              <Toggle title="Show Child">
+                <ChildForToggle/>
+              </Toggle>
+                <br/>
+                Ada error pada hideshow nanti diberesin ya
+                {/* <Hideshow/> */}
                 <br/>
 
              {contents}

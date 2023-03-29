@@ -6,4 +6,6 @@ npm audit fix --force
 
 npm install react-toastify --save
 
-npm install --save bootstrap      
+npm install --save bootstrap     
+
+npm install --save sweetalert2 sweetalert2-react-content  
