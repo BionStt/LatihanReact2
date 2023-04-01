@@ -54,7 +54,25 @@ import Sweetalertdemo from './Components/Sweetalertdemo' ;
 import Toggle from './Components/Toggle' ; 
 import ChildForToggle from './Components/ChildForToggle' ; 
 // import Hideshow from './Components/Hideshow' ; 
+import Tabs from "./Components/Tabs";
+import Datepic from './Components/Datepic'  
+import Datefce from "./Components/Datefce";  
+import Timepicker from "./Components/Timepicker";  
+import ClockDemo from './Components/ClockDemo'; 
+import ClockLiveDemo from './Components/ClockLiveDemo'; 
+import Mobilenumbervalidation from './Components/Mobilenumbervalidation'; 
 
+import { BrowserRouter as Router,Routes,Route, Link }  from 'react-router-dom';
+
+
+// ract-bootstrap components
+import { Navbar, Nav, NavItem, MenuItem, NavDropdown } from 'react-bootstrap';
+
+import LoginRegisterWithAxios from "./Components/LoginRegisterWithAxios";  
+import RegisterEmployeeWithAxios from "./Components/RegisterEmployeeWithAxios"; 
+import DahboardLoginRegisterEmployeeAxios from "./Components/DahboardLoginRegisterEmployeeAxios";  
+
+import './App.css'; 
 
 export default class App extends Component {
     static displayName = App.name;
@@ -114,22 +132,36 @@ export default class App extends Component {
             : App.renderForecastsTable(this.state.forecasts);
 
         return (
-            <ErrorBoundary>    
+          <ErrorBoundary>    
             <div>
                 <h1 id="tabelLabel" >Weather forecast</h1>
                 <p>This component demonstrates fetching data from the server.</p>
-                <Addition></Addition>
+               <br/>
+               <br/>
+               <br/>
+               <Addition></Addition>
+               <br/>
                 <Addition2></Addition2>
+                <br/>
                 <Sum></Sum>
+                <br/>
                 <Product></Product>
+                <br/>
                 <Product2></Product2>
+                <br/>
                 <Product3></Product3>
+                <br/>
                 <Product4></Product4>
+                <br/>
                 <Product5></Product5>
+                <br/>
                 <Product6 name="multiply"></Product6>
+                <br/>
                 <Product6 name="tambah"></Product6>
+                <br/>
                 <Product6 name="kurang"></Product6>
                 <p>klik diangka ini maka akan berubah atau bertambah nilainya</p>
+                <br/>
                 <States/>
                
                 <p>klik counter dong</p>
@@ -224,10 +256,89 @@ export default class App extends Component {
                 Ada error pada hideshow nanti diberesin ya
                 {/* <Hideshow/> */}
                 <br/>
+                <h1>Tabs Demo</h1>
+                <Tabs>
+                    <div label="Gator">
+                    See ya later, <em>Alligator</em>!
+                    </div>
+                    <div label="Croc">
+                    After 'while, <em>Crocodile</em>!
+                    </div>
+                    <div label="Sarcosuchus">
+                    Nothing to see here, this tab is <em>extinct</em>!
+                    </div>
+                </Tabs>
+                <br/>
+                <Datepic></Datepic>  
+                <br/>
+                  <Datefce></Datefce> 
+                  <br/> 
+                 <Timepicker></Timepicker>  
+                <br/>
+                <ClockDemo/>  
+                <br/>
+                <ClockLiveDemo/>  
+                <br/>
+                <Mobilenumbervalidation></Mobilenumbervalidation>
+                <br/>
+                <br/>
+                <br/>
+                <Router>
+                {/* <Link to="/DahboardLoginRegisterEmployeeAxios" >DahboardLoginRegisterEmployeeAxios</Link> | */}
+                <Link to="/RegisterEmployeeWithAxios" > RegisterEmployeeWithAxios</Link>  |
+                <Link to="/LoginRegisterWithAxios" > LoginRegisterWithAxios</Link>
+
+                <Routes>
+                <Route path="/DahboardLoginRegisterEmployeeAxios" element={<DahboardLoginRegisterEmployeeAxios/>} />
+                <Route path="/RegisterEmployeeWithAxios" element={<RegisterEmployeeWithAxios />} />
+                <Route path="/LoginRegisterWithAxios" element={<LoginRegisterWithAxios />} />
+                
+                </Routes>
+                </Router>
+                <br/>
+                <br/>
+                <br/>
+                <Router>
+                    <div className="container">      
+                        <nav className="">      
+                            <div className="" >      
+                            <ul className="">      
+                            <li className="">      
+                                <Link to={'/LoginRegisterWithAxios'} className="">LoginRegisterWithAxios</Link>      
+                            </li>    
+                            <li className="">      
+                                <Link to={'/RegisterEmployeeWithAxios'} className="">RegisterEmployeeWithAxios</Link>      
+                            </li>    
+                            </ul>      
+                            </div>      
+                        </nav>
+                            <br />      
+                    
+                     </div>         
+                    <Routes>
+                    <Route path="/DahboardLoginRegisterEmployeeAxios" element={<DahboardLoginRegisterEmployeeAxios/>} />
+                    <Route path="/RegisterEmployeeWithAxios" element={<RegisterEmployeeWithAxios />} />
+                    <Route path="/LoginRegisterWithAxios" element={<LoginRegisterWithAxios />} />
+                    
+                    </Routes>
+                    </Router>
+                    <br />    
+                    <br />    
+                    <br />    
+
+
+
+
+
+
+              </div>
+                    
+
+
 
              {contents}
-            </div>
-            </ErrorBoundary>    
+       
+         </ErrorBoundary>    
         );
     }
 

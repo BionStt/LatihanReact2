@@ -1,11 +1,246 @@
+using System.Reflection;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Net.Http.Headers;
+using Microsoft.OpenApi.Models;
+using webapi.Contract;
+using webapi.Implementation;
+using webapi.Models;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy(name: MyAllowSpecificOrigins,
+//                      policy =>
+//                      {
+//                          policy.WithOrigins("http://example.com",
+//                                              "http://www.contoso.com");
+//                      });
+//});
+
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy(MyAllowSpecificOrigins,
+//                          policy =>
+//                          {
+//                              policy.WithOrigins("http://localhost:3000")
+//                                                  .AllowAnyHeader()
+//                                                  .AllowAnyOrigin()
+//                                                  .SetIsOriginAllowedToAllowWildcardSubdomains()
+//                                                  .AllowCredentials()
+//                                                  .AllowAnyMethod();
+//                          });
+//});
+
+
+//builder.Services.AddCors(options =>
+//{
+//    options.AddDefaultPolicy(
+//        policy =>
+//        {
+//            policy.WithOrigins("http://example.com",
+//                                "http://www.contoso.com");
+//        });
+//});
+
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("Policy1", // liat dicontroller
+//        policy =>
+//        {
+//            policy.WithOrigins("http://example.com",
+//                                "http://www.contoso.com");
+//        });
+
+//    options.AddPolicy("AnotherPolicy",
+//        policy =>
+//        {
+//            policy.WithOrigins("http://www.contoso.com")
+//                                .AllowAnyHeader()
+//                                .AllowAnyMethod();
+//        });
+//});
+
+
+
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy(name: "MyPolicy",
+//        policy =>
+//        {
+//            policy.WithOrigins("http://example.com",
+//                                "http://www.contoso.com")
+//                    .WithMethods("PUT", "DELETE", "GET");
+//        });
+//});
+
+
+//AllowAnyOrigin: Allows CORS requests from all origins with any scheme (http or https).
+//AllowAnyOrigin is insecure because any website can make cross-origin requests to the app.
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy(name: MyAllowSpecificOrigins,
+//        policy =>
+//        {
+//            policy.WithOrigins("https://*.example.com")
+//                .SetIsOriginAllowedToAllowWildcardSubdomains();
+//        });
+//});
+
+
+//To allow specific headers to be sent in a CORS request, called author request headers,
+//call WithHeaders and specify the allowed headers:
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy(name: MyAllowSpecificOrigins,
+//       policy =>
+//       {
+//           policy.WithOrigins("http://example.com")
+//                  .WithHeaders(HeaderNames.ContentType, "x-custom-header");
+//       });
+//});
+
+
+//To allow all author request headers, call AllowAnyHeader:
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy(name: MyAllowSpecificOrigins,
+//        policy =>
+//        {
+//            policy.WithOrigins("https://*.example.com")
+//                   .AllowAnyHeader();
+//        });
+//});
+
+//The CORS specification calls these headers simple response headers. To make other headers available to the app,
+//call WithExposedHeaders:
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("MyExposeResponseHeadersPolicy",
+//        policy =>
+//        {
+//            policy.WithOrigins("https://*.example.com")
+//                   .WithExposedHeaders("x-custom-header");
+//        });
+//});
+
+//The server must allow the credentials. To allow cross-origin credentials, call AllowCredentials:
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("MyMyAllowCredentialsPolicy",
+//        policy =>
+//        {
+//            policy.WithOrigins("http://example.com")
+//                   .AllowCredentials();
+//        });
+//});
+//contoh di FE nya
+//    $.ajax({
+//  type: 'get',
+//  url: 'https://www.example.com/api/test',
+//  xhrFields:
+//{
+//withCredentials: true
+//  }
+//});
+//fetch('https://www.example.com/api/test', {
+//credentials: 'include'
+//});
+
+
+//To allow specific headers, call WithHeaders:
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("MyAllowHeadersPolicy",
+//        policy =>
+//        {
+//            policy.WithOrigins("http://example.com")
+//                       .WithHeaders(HeaderNames.ContentType, "x-custom-header");
+//        });
+//});
+
+
+//To allow all author request headers, call AllowAnyHeader:
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("MyAllowAllHeadersPolicy",
+//        policy =>
+//        {
+//            policy.WithOrigins("https://*.example.com")
+//                   .AllowAnyHeader();
+//        });
+//});
+
+
+//The Access-Control-Max-Age header specifies how long the response to the preflight request can be cached.
+//To set this header, call SetPreflightMaxAge:
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("MySetPreflightExpirationPolicy",
+//        policy =>
+//        {
+//            policy.WithOrigins("http://example.com")
+//                   .SetPreflightMaxAge(TimeSpan.FromSeconds(2520));
+//        });
+//});
+
+
+
+
+
+builder.Host.ConfigureLogging(logging =>
+{
+    logging.ClearProviders();
+    logging.AddConsole();
+});
+
+builder.Services.AddDbContext<AssessmentdbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
+builder.Services.AddScoped<ITesTechnicalService, TesTechnicalService>();
+
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+// builder.Services.AddSwaggerGen();
+
+
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Version = "v1",
+        Title = "Latihan Fullstack React Net Core",
+        Description = "Latihan Fullstack React Net Core",
+        TermsOfService = new Uri("https://example.com/terms"),
+        Contact = new OpenApiContact
+        {
+            Name = "Example Contact",
+            Url = new Uri("https://example.com/contact")
+        },
+        License = new OpenApiLicense
+        {
+            Name = "Example License",
+            Url = new Uri("https://example.com/license")
+        }
+    });
+
+    //  options.OperationFilter<AddHeaderParameter>();
+
+    // using System.Reflection;
+    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+
+
+});
 
 var app = builder.Build();
 
@@ -17,6 +252,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+//app.UseCors(MyAllowSpecificOrigins);
+//app.UseCors();
 
 app.UseAuthorization();
 

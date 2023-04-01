@@ -9,3 +9,20 @@ npm install react-toastify --save
 npm install --save bootstrap     
 
 npm install --save sweetalert2 sweetalert2-react-content  
+
+npm install react-router-dom --save  
+
+npm install react-datepicker --save  
+
+npm install react-owl-carousel --save  
+
+npm install @material-ui/core --save    
+
+npm install react-clock  
+npm install --save react react-live-clock
+
+npm install react-bootstrap bootstrap  
+
+npm install react-router-dom --save    
+
+npm install react-router-dom@latest

@@ -1,0 +1,42 @@
+add Microsoft.EntityFrameworkCore.Design
+ Microsoft.EntityFrameworkCore.Tools
+    Microsoft.EntityFrameworkCore.SQlServer
+Scaffold-DbContext "Server=DGLNLO-821684-1;Database=TestWOM;Trusted_Connection=True;Trust Server Certificate=true" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+   
+    Scaffold-DbContext "Data Source=DGLNLO-821684-1;Initial Catalog=assessmentdb;Integrated Security=True;Trust Server Certificate=true" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+   tambahkan code berikut ini pada startup.cs didalam ConfigureServices
+
+  services.AddDbContext<OASE_DEV3Context>(options =>
+               options.UseSqlServer(
+                   Configuration.GetConnectionString("DefaultConnection")));
+
+
+
+    jangan lupa nambahkan referensinya 
+        using Microsoft.EntityFrameworkCore;
+        using BackEndForLearning.Models;
+
+get-help scaffold-dbcontext �detailed
+Scaffold-DbContext "Server=DGLNLO-821684-1;Database=TestWOM;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+dotnet ef dbcontext scaffold "Server=DGLNLO-821684-1;Database=TestWOM;Trusted_Connection=True;Trust Server Certificate=true" Microsoft.EntityFrameworkCore.SqlServer  --project RestFulApiTestWOM.csproj --OutputDir Models
+
+
+dotnet dev-certs https --clean
+dotnet dev-certs https --trust
+
+dotnet user-secrets init --project webapi.csproj
+dotnet user-secrets set ConnectionStrings:DBTest1 "Data Source=DGLNLO-821684-1;Initial Catalog=TestWOM;Trusted_Connection=True;Trust Server Certificate=true" --project RestFulApiTestWOM.csproj
+dotnet ef dbcontext scaffold Name=ConnectionStrings:DBTest1 Microsoft.EntityFrameworkCore.SqlServer   --project RestFulApiTestWOM.csproj --OutputDir Models
+
+
+
+Get-Help entityframework	Displays information about entity framework commands.
+Add-Migration <migration name>	Creates a migration by adding a migration snapshot.
+Remove-Migration	Removes the last migration snapshot.
+Update-Database	Updates the database schema based on the last migration snapshot.
+Script-Migration	Generates a SQL script using all the migration snapshots.
+Scaffold-DbContext	Generates a DbContext and entity type classes for a specified database. This is called reverse engineering.
+Get-DbContext	Gets information about a DbContext type.
+Drop-Database	Drops the database.
+
