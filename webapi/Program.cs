@@ -1,7 +1,9 @@
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Net.Http.Headers;
 using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerUI;
 using webapi.Contract;
 using webapi.Implementation;
 using webapi.Models;
@@ -28,23 +30,30 @@ var builder = WebApplication.CreateBuilder(args);
 //    options.AddPolicy(MyAllowSpecificOrigins,
 //                          policy =>
 //                          {
-//                              policy.WithOrigins("http://localhost:3000")
-//                                                  .AllowAnyHeader()
-//                                                  .AllowAnyOrigin()
-//                                                  .SetIsOriginAllowedToAllowWildcardSubdomains()
-//                                                  .AllowCredentials()
-//                                                  .AllowAnyMethod();
+//                              policy.WithOrigins("https://localhost:3000")
+//                                                  .AllowAnyMethod()
+//                                                    .AllowAnyHeader()
+//                                                  //.AllowAnyOrigin()
+//                                                  //.SetIsOriginAllowedToAllowWildcardSubdomains()
+//                                                  //.AllowCredentials()
+//                                                  .WithExposedHeaders(new string[] {"totalAmountOfRecords" });
 //                          });
 //});
 
+//Enable CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod()
+      .AllowAnyHeader());
+});
 
 //builder.Services.AddCors(options =>
 //{
 //    options.AddDefaultPolicy(
 //        policy =>
 //        {
-//            policy.WithOrigins("http://example.com",
-//                                "http://www.contoso.com");
+//            policy.WithOrigins("https://localhost:3000").AllowAnyMethod().AllowAnyHeader()
+//            .WithExposedHeaders(new string[] { "totalAmountOfRecords"});
 //        });
 //});
 
@@ -205,6 +214,8 @@ builder.Services.AddDbContext<AssessmentdbContext>(options =>
 });
 
 builder.Services.AddScoped<ITesTechnicalService, TesTechnicalService>();
+builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
 
 builder.Services.AddControllers();
@@ -248,15 +259,38 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    //app.UseSwaggerUI();
+    app.UseSwaggerUI(c => {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Latihan Fullstack React Net Core");
+        c.DocumentTitle = "Latihan Fullstack React Net Core";
+        c.DocExpansion(DocExpansion.List);
+    });
+
 }
 
-app.UseHttpsRedirection();
+
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Photos")),
+    RequestPath = "/Photos"
+});
 
 //app.UseCors(MyAllowSpecificOrigins);
 //app.UseCors();
+app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+//app.UseSwagger();
+////app.UseSwaggerUI();
+//app.UseSwaggerUI(c => {
+//    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Latihan Fullstack React Net Core");
+//    c.DocumentTitle = "Latihan Fullstack React Net Core";
+//    c.DocExpansion(DocExpansion.List);
+//});
 
 app.MapControllers();
 

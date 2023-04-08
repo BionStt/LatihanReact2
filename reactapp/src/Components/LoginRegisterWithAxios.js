@@ -2,12 +2,20 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios';  
 function LoginRegisterWithAxios(props) {  
     const [employee, setemployee] = useState({ Email: '', Password: ''});  
-    const apiUrl = "http://localhost:5073/api/TesTechnical/GetEmployeeLogin";    
+    // const apiUrl = "http://localhost:5073/api/TesTechnical/GetEmployeeLogin";
+    const apiUrl = "https://localhost:7148/api/TesTechnical/GetEmployeeLogin";
+    const options = {    headers: {"content-type": "application/json"}  }    
     const Login = (e) => {    
             e.preventDefault();    
             debugger;   
             const data = { Email:employee.Email, Password: employee.Password };    
-            axios.post(apiUrl, data)    
+            // axios.post(apiUrl, data)   
+            axios.get(apiUrl, {
+              // params: {
+              //   username: 'john1904',
+              // }
+              params: data
+            })
             .then((result) => {    
                 debugger;  
                 console.log(result.data);   

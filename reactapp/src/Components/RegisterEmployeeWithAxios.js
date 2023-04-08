@@ -2,12 +2,15 @@ import React, { useState } from 'react'
 import axios from 'axios';  
 function RegisterEmployeeWithAxios(props) {  
   const [data, setdata] = useState({ Email: '', Password: '', EmployeeName: '', City: '', Department: '' })  
-  const apiUrl = "http://localhost:5073/api/TesTechnical/InsertEmployee";  
+  // const apiUrl = "http://localhost:5073/api/TesTechnical/InsertEmployee";  
+  const apiUrl = "https://localhost:7148/api/TesTechnical/InsertEmployee";  
+  const options = {    headers: {"content-type": "application/json"}  }
   const Registration = (e) => {  
     e.preventDefault();  
     debugger;  
     const data1 = { Email: data.Email, Password: data.Password, EmployeeName: data.EmployeeName, City: data.City, Department: data.Department };  
-    axios.post(apiUrl, data1)  
+    // axios.post(apiUrl, data1)  
+    axios.post(apiUrl, data1,options)  
       .then((result) => {  
         debugger;  
         console.log(result.data);  

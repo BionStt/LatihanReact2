@@ -40,3 +40,6 @@ Scaffold-DbContext	Generates a DbContext and entity type classes for a specified
 Get-DbContext	Gets information about a DbContext type.
 Drop-Database	Drops the database.
 
+
+ Scaffold-DbContext "Data Source=DGLNLO-821684-1;Initial Catalog=assessmentdb;Integrated Security=True;Trust Server Certificate=true" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force
+
