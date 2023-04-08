@@ -4,43 +4,47 @@ import './Components/CRUD/App.css';
 import { Home } from './Components/CRUD/Home';
 import { Department } from './Components/CRUD/Department';
 import { Employee } from './Components/CRUD/Employee';
-import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom';
+// import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom';
+
+import { BrowserRouter as Router,Routes,Route, Link }  from 'react-router-dom';
 
 function AppForCRUD() {
   return (
-    <BrowserRouter>
+    <Router>
       <div className="App container">
         <h3 className="d-flex justify-content-center m-3">
+          Latihan FullStack React with Net Core 6
           My React App
         </h3>
 
         <nav className="navbar navbar-expand-sm bg-light navbar-dark">
           <ul className="navbar-nav">
             <li className="nav-item m-1">
-              <NavLink className="btn btn-light btn-outline-primary" to="/home">
+              <Link className="btn btn-light btn-outline-primary" to="/home">
                 Home
-              </NavLink>
+              </Link>
             </li>
             <li className="nav-item m-1">
-              <NavLink className="btn btn-light btn-outline-primary" to="/department">
+              <Link className="btn btn-light btn-outline-primary" to="/department">
                 Department
-              </NavLink>
+              </Link>
             </li>
             <li className="nav-item m-1">
-              <NavLink className="btn btn-light btn-outline-primary" to="/employee">
+              <Link className="btn btn-light btn-outline-primary" to="/employee">
                 Employee
-              </NavLink>
+              </Link>
             </li>
           </ul>
         </nav>
 
-        <switch>
-          <Route path='/home' component={Home}></Route>
-          <Route path='/department' component={Department}></Route>
-          <Route path='/employee' component={Employee}></Route>
-        </switch>
+        <Routes>
+          <Route path='/home' element={<Home/>}></Route>
+          <Route path='/department' element={<Department/>}></Route>
+          <Route path='/employee' element={<Employee/>}></Route>
+
+        </Routes>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 export default AppForCRUD;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { variables } from './Components/CRUD/Variables.js';
+import { variables } from './Variables.js';
 
 export class Employee extends Component {
 
