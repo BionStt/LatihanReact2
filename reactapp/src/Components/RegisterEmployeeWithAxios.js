@@ -3,7 +3,7 @@ import axios from 'axios';
 function RegisterEmployeeWithAxios(props) {  
   const [data, setdata] = useState({ Email: '', Password: '', EmployeeName: '', City: '', Department: '' })  
   // const apiUrl = "http://localhost:5073/api/TesTechnical/InsertEmployee";  
-  const apiUrl = "https://localhost:7148/api/TesTechnical/InsertEmployee";  
+  const apiUrl = "http://localhost:5073/api/TesTechnical/InsertEmployee";  
   const options = {    headers: {"content-type": "application/json"}  }
   const Registration = (e) => {  
     e.preventDefault();  

@@ -142,6 +142,7 @@ export class Department extends Component {
     }
 
     render() {
+        debugger;
         const {
             departments,
             modalTitle,
@@ -215,9 +216,9 @@ export class Department extends Component {
                     </thead>
                     <tbody>
                         {departments.map(dep =>
-                            <tr key={dep.DepartmentId}>
-                                <td>{dep.DepartmentId}</td>
-                                <td>{dep.DepartmentName}</td>
+                            <tr key={dep.departmentId}>
+                                <td>{dep.departmentId}</td>
+                                <td>{dep.departmentName}</td>
                                 <td>
                                     <button type="button"
                                         className="btn btn-light mr-1"

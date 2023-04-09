@@ -8,7 +8,8 @@ namespace webapi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [DisableCors]
+    //[DisableCors]
+    [EnableCors("AllowOrigin")]
     public class TesTechnicalController : ControllerBase
     {
         private readonly ITesTechnicalService _repo;
@@ -125,7 +126,7 @@ namespace webapi.Controllers
             //  return Ok();
         }
 
-        [DisableCors]
+        //[DisableCors]
         [HttpGet("GetEmployeeLogin")]
         //[EnableCors("Policy1")]       
         public async Task<IActionResult> GetEmployeeLogin([FromQuery] Login login)

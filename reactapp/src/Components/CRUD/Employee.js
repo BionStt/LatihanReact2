@@ -80,7 +80,8 @@ export class Employee extends Component {
             body: JSON.stringify({
                 EmployeeName: this.state.EmployeeName,
                 Department: this.state.Department,
-                DateOfJoining: this.state.DateOfJoining,
+                doj: this.state.DateOfJoining,
+                // DateOfJoining: this.state.DateOfJoining,
                 PhotoFileName: this.state.PhotoFileName
             })
         })
@@ -105,7 +106,8 @@ export class Employee extends Component {
                 EmployeeId: this.state.EmployeeId,
                 EmployeeName: this.state.EmployeeName,
                 Department: this.state.Department,
-                DateOfJoining: this.state.DateOfJoining,
+                // DateOfJoining: this.state.DateOfJoining,
+                doj: this.state.DateOfJoining,
                 PhotoFileName: this.state.PhotoFileName
             })
         })
@@ -198,11 +200,11 @@ export class Employee extends Component {
                     </thead>
                     <tbody>
                         {employees.map(emp =>
-                            <tr key={emp.EmployeeId}>
-                                <td>{emp.EmployeeId}</td>
-                                <td>{emp.EmployeeName}</td>
-                                <td>{emp.Department}</td>
-                                <td>{emp.DateOfJoining}</td>
+                            <tr key={emp.employeeId}>
+                                <td>{emp.employeeId}</td>
+                                <td>{emp.employeeName}</td>
+                                <td>{emp.department}</td>
+                                <td>{emp.doj}</td>
                                 <td>
                                     <button type="button"
                                         className="btn btn-light mr-1"
@@ -256,8 +258,8 @@ export class Employee extends Component {
                                                 onChange={this.changeDepartment}
                                                 value={Department}>
                                                 {departments.map(dep =>
-                                                    <option key={dep.DepartmentId}>
-                                                        {dep.DepartmentName}
+                                                    <option key={dep.departmentId}>
+                                                        {dep.departmentName}
                                                     </option>)}
                                             </select>
                                         </div>

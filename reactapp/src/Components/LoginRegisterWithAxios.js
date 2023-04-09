@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react'   
 import axios from 'axios';  
+import { withRouter  } from 'react-router-dom';
+
+
 function LoginRegisterWithAxios(props) {  
     const [employee, setemployee] = useState({ Email: '', Password: ''});  
     // const apiUrl = "http://localhost:5073/api/TesTechnical/GetEmployeeLogin";
-    const apiUrl = "https://localhost:7148/api/TesTechnical/GetEmployeeLogin";
+    const apiUrl = "http://localhost:5073/api/TesTechnical/GetEmployeeLogin";
     const options = {    headers: {"content-type": "application/json"}  }    
     const Login = (e) => {    
             e.preventDefault();    
             debugger;   
+            // const history = useHistory();
             const data = { Email:employee.Email, Password: employee.Password };    
             // axios.post(apiUrl, data)   
             axios.get(apiUrl, {
@@ -16,19 +20,32 @@ function LoginRegisterWithAxios(props) {
               // }
               params: data
             })
+            // axios({
+            //   method: 'get',
+            //   withCredentials: false,
+            //   // crossdomain: true,
+            //   // headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            //   // headers: {'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'},
+            //   url: apiUrl,
+            //   params: data
+            // })
             .then((result) => {    
                 debugger;  
                 console.log(result.data);   
-                const serializedState = JSON.stringify(result.data.UserDetails);  
+                const serializedState = JSON.stringify(result.data);  
                var a= localStorage.setItem('myData', serializedState);   
                 console.log("A:",a)  
-                const user =result.data.UserDetails;  
-                console.log(result.data.message);  
-                if (result.data.status == '200')    
-                    props.history.push('/Dashboard')    
-                else    
-                alert('Invalid User');    
-            })        
+                const user =result.data;  
+                console.log(result.data);  
+                this.props.history.push('/Dashboard') ;
+                // if (result.status == '200')    
+                //     props.history.push('/Dashboard')    
+                // else    
+                // alert('Invalid User');    
+            })
+            .catch(error => {
+              console.log("Error ========>", error);
+          }) 
           };    
           
           const onChange = (e) => {    
