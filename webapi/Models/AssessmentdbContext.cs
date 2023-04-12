@@ -25,6 +25,8 @@ public partial class AssessmentdbContext : DbContext
 
     public virtual DbSet<Ltcourierfee> Ltcourierfees { get; set; }
 
+    public virtual DbSet<MovieList> MovieLists { get; set; }
+
     public virtual DbSet<Mscourier> Mscouriers { get; set; }
 
     public virtual DbSet<Mspayment> Mspayments { get; set; }
@@ -111,6 +113,21 @@ public partial class AssessmentdbContext : DbContext
             entity.Property(e => e.CourierId).HasColumnName("CourierID");
             entity.Property(e => e.Price).HasColumnType("decimal(10, 2)");
             entity.Property(e => e.WeightId).HasColumnName("WeightID");
+        });
+
+        modelBuilder.Entity<MovieList>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__MovieLis__3214EC071C3269A1");
+
+            entity.ToTable("MovieList");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.MovieLanguage).HasMaxLength(100);
+            entity.Property(e => e.Ott)
+                .HasMaxLength(100)
+                .HasColumnName("OTT");
+            entity.Property(e => e.ReleaseYear).HasMaxLength(5);
+            entity.Property(e => e.Title).HasMaxLength(100);
         });
 
         modelBuilder.Entity<Mscourier>(entity =>

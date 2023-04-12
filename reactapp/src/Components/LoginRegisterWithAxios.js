@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react'   
 import axios from 'axios';  
-import { withRouter  } from 'react-router-dom';
+import { withRouter ,useNavigate  } from 'react-router-dom';
 
 
 function LoginRegisterWithAxios(props) {  
     const [employee, setemployee] = useState({ Email: '', Password: ''});  
     // const apiUrl = "http://localhost:5073/api/TesTechnical/GetEmployeeLogin";
     const apiUrl = "http://localhost:5073/api/TesTechnical/GetEmployeeLogin";
-    const options = {    headers: {"content-type": "application/json"}  }    
+    const navigate=useNavigate();
+    const options = {    headers: {"content-type": "application/json"}  }  ;  
     const Login = (e) => {    
             e.preventDefault();    
             debugger;   
@@ -36,12 +37,12 @@ function LoginRegisterWithAxios(props) {
                var a= localStorage.setItem('myData', serializedState);   
                 console.log("A:",a)  
                 const user =result.data;  
-                console.log(result.data);  
-                this.props.history.push('/Dashboard') ;
-                // if (result.status == '200')    
-                //     props.history.push('/Dashboard')    
-                // else    
-                // alert('Invalid User');    
+                console.log(result.data);                
+                if (result.status == '200')    
+                    navigate('/DahboardLoginRegisterEmployeeAxios');
+                     
+                else    
+                alert('Invalid User');    
             })
             .catch(error => {
               console.log("Error ========>", error);

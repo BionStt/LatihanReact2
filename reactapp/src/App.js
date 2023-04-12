@@ -61,6 +61,15 @@ import Timepicker from "./Components/Timepicker";
 import ClockDemo from './Components/ClockDemo'; 
 import ClockLiveDemo from './Components/ClockLiveDemo'; 
 import Mobilenumbervalidation from './Components/Mobilenumbervalidation'; 
+// import OptionSelectWithMaterialUI from './Components/OptionSelectWithMaterialUI'; 
+import ChangeColor from './Components/ChangeColor'; 
+
+import MainWeather from './Components/Weather/MainWeather'; 
+import Contoh1 from './Components/ComponentsUpdateWithState/Contoh1'; 
+import Contoh2 from './Components/ComponentsUpdateWithState/Contoh2'; 
+import SingleAtribut from './Components/ComponentsUpdateWithState/SingleAtribut'; 
+import MultipleAtribut from './Components/ComponentsUpdateWithState/MultipleAtribut'; 
+import GetPreviousState from './Components/ComponentsUpdateWithState/GetPreviousState'; 
 
 import { BrowserRouter as Router,Routes,Route, Link }  from 'react-router-dom';
 
@@ -71,8 +80,29 @@ import { Navbar, Nav, NavItem, MenuItem, NavDropdown } from 'react-bootstrap';
 import LoginRegisterWithAxios from "./Components/LoginRegisterWithAxios";  
 import RegisterEmployeeWithAxios from "./Components/RegisterEmployeeWithAxios"; 
 import DahboardLoginRegisterEmployeeAxios from "./Components/DahboardLoginRegisterEmployeeAxios";  
+import ClockDemoFromGeeks from "./Components/ClockDemoFromGeeks";  
+
+import Navbar1 from './Components/NavbarResponsive/Navbar1';
+import Home from './Components/NavbarResponsive/pages/home';
+import About from './Components/NavbarResponsive/pages/about';
+import Events from './Components/NavbarResponsive/pages/events';
+import AnnualReport from './Components/NavbarResponsive/pages/annual';
+import Teams from './Components/NavbarResponsive/pages/team';
+import Blogs from './Components/NavbarResponsive/pages/blogs';
+import SignUp from './Components/NavbarResponsive/pages/signup';
+import PageNotFound from './Components/NavbarResponsive/pages/PageNotFound';
+  
+import MyButton from "./Components/MyButtonToAnotherPage/MyButton";
+import About1 from "./Components/MyButtonToAnotherPage/Pages/About";
+import Home1 from "./Components/MyButtonToAnotherPage/Pages/Home";
+import Profile1 from "./Components/MyButtonToAnotherPage/Pages/Profile";
 
 import './App.css'; 
+
+import Tampilkan from "./Components/CrudMovie/Tampilkan";
+import {Title} from "./Components/DragAndDrop/Title";
+
+
 
 export default class App extends Component {
     static displayName = App.name;
@@ -134,7 +164,7 @@ export default class App extends Component {
         return (
           <ErrorBoundary>    
             <div>
-                <h1 id="tabelLabel" >Weather forecast</h1>
+                <h1 id="tabelLabel" >Latihan Fullstack React Net Core</h1>
                 <p>This component demonstrates fetching data from the server.</p>
                <br/>
                <br/>
@@ -145,6 +175,10 @@ export default class App extends Component {
                     <br/>
                     <Addition></Addition>
                     <br/>
+                    <br/>
+                    <p>Silahkan diklik </p>
+                            <GetPreviousState></GetPreviousState>
+                            <br/>
                         <Addition2></Addition2>
                         <br/>
                         <Sum></Sum>
@@ -170,6 +204,27 @@ export default class App extends Component {
                     
                         <p>klik counter dong</p>
                         <States2/>
+                        <br/>
+                        <br/>
+                        <ChangeColor></ChangeColor>
+                        <br/>
+                        <br/>
+                        <MainWeather></MainWeather>
+                        <br/>
+                        <br/>
+                        <ClockDemoFromGeeks></ClockDemoFromGeeks>
+                        <br/>
+                        <br/>
+                        <Contoh1></Contoh1>
+                        <br/>
+                        <br/>
+                        <Contoh2></Contoh2>
+                        <br/>
+                        <br/>
+                        <SingleAtribut></SingleAtribut>
+                        <br/>
+                        <br/>
+                        <MultipleAtribut></MultipleAtribut>
                         <br/>
 
                     
@@ -298,8 +353,10 @@ export default class App extends Component {
                             <br/>
                             <Mobilenumbervalidation></Mobilenumbervalidation>
                             <br/>
+                           
                             <br/>
-
+                            {/* <OptionSelectWithMaterialUI></OptionSelectWithMaterialUI> */}
+                            <br/>
 
 
                      </div>  
@@ -332,7 +389,7 @@ export default class App extends Component {
                             <Route path="/DahboardLoginRegisterEmployeeAxios" element={<DahboardLoginRegisterEmployeeAxios/>} />
                             <Route path="/RegisterEmployeeWithAxios" element={<RegisterEmployeeWithAxios />} />
                             <Route path="/LoginRegisterWithAxios" element={<LoginRegisterWithAxios />} />
-                            
+                            <Route path="*" element={<PageNotFound/>} />
                             </Routes>
                             </Router>
                             <br/>
@@ -356,10 +413,13 @@ export default class App extends Component {
                                 
                                 </div>         
                                 <Routes>
+                                     {/* This route is for DahboardLoginRegisterEmployeeAxios component 
+                                            with exact path "/DahboardLoginRegisterEmployeeAxios", in component props 
+                                            we passes the imported component*/}
                                 <Route path="/DahboardLoginRegisterEmployeeAxios" element={<DahboardLoginRegisterEmployeeAxios/>} />
                                 <Route path="/RegisterEmployeeWithAxios" element={<RegisterEmployeeWithAxios />} />
                                 <Route path="/LoginRegisterWithAxios" element={<LoginRegisterWithAxios />} />
-                                
+                                <Route path="*" element={<PageNotFound/>} />
                                 </Routes>
                                 </Router>
                                 <br />    
@@ -370,21 +430,73 @@ export default class App extends Component {
 
 
                      </div>
+
+                     <div label="navbar responsive">
+                     <br />    
+                     <br />  
+                     <Router>
+                        {/* link to ada didlm navbar1 */}
+                        <Navbar1 />
+                        <Routes>
+                             {/* This route is for home component 
+                                with exact path "/", in component props 
+                                we passes the imported component*/}
+                            <Route path='/' exact element={<Home/>} />
+                            <Route path='/about' element={<About/>} />
+                            <Route path='/events' element={<Events/>} />
+                            <Route path='/annual' element={<AnnualReport/>} />
+                            <Route path='/team' element={<Teams/>} />
+                            <Route path='/blogs' element={<Blogs/>} />
+                            <Route path='/sign-up' element={<SignUp/>} />
+                            <Route path="*" element={<PageNotFound/>} />
+                        </Routes>
+                        </Router>
+
+
+                     <br />    
+                     <br />    
+
+
+                     </div>
                     
-                   
+                     <div label="Gunakan button untuk pindah page">
+                     <Router>
+                        <p>Ternyata setiap klik button selalu refresh dan url berubah</p>
+                    <MyButton to="home1" />
+                    <MyButton to="profile1" />
+                    <MyButton to="about1" />
+                    <Routes>
+                        <Route path="/home1" element={<Home1 />} />
+                        <Route path="/profile1" 
+                            element={<Profile1 />} />
+                        <Route path="/about1" 
+                            element={<About1 />} />
+                             <Route path="*" element={<PageNotFound/>} />
+                    </Routes>
+                </Router>
+                     </div>
+
+                    <div label="CRUD Movie ..">
+                   <br/>
+                   <Tampilkan></Tampilkan>
+                   <br/>
+
+                     </div>
+
+                     <div label="Drag And Drop React">
+                     <div className="container-main flex">
+                        <Title />
+                    </div>
+
+                    </div>
+
+                    <div label="apalagi..">
+
+
+                </div>      
                 </Tabs>
-                <br/>
-
-              
-                
-               
-              
-              
-              
-                    <br />    
-
-
-
+                <br/>  
+                 <br />   
 
 
 

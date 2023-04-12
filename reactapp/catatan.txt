@@ -26,3 +26,13 @@ npm install react-bootstrap bootstrap
 npm install react-router-dom --save    
 
 npm install react-router-dom@latest
+
+npm install @material-ui/core  --save    
+
+npm install @material-ui/icons  --save    
+
+npm install --save styled-components
+
+npm install react-icons --save --force
+
+npm install semantic-ui-react semantic-ui-css --save --force

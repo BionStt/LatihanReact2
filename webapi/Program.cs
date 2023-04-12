@@ -1,4 +1,5 @@
 using System.Reflection;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Net.Http.Headers;
@@ -216,9 +217,30 @@ builder.Services.AddDbContext<AssessmentdbContext>(options =>
 builder.Services.AddScoped<ITesTechnicalService, TesTechnicalService>();
 builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 
-
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    var cacheProfiles = builder.Configuration
+            .GetSection("CacheProfiles")
+            .GetChildren();
+    foreach (var cacheProfile in cacheProfiles)
+    {
+        options.CacheProfiles
+        .Add(cacheProfile.Key,
+        cacheProfile.Get<CacheProfile>());
+    }
+});
+//builder.Services.AddControllers(options =>
+//{
+//    options.CacheProfiles.Add("Cache2Mins",
+//        new CacheProfile()
+//        {
+//            Duration = 120,
+//            Location = ResponseCacheLocation.Any
+//        });
+//});
+//builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 // builder.Services.AddSwaggerGen();
