@@ -6,6 +6,7 @@ using Microsoft.Net.Http.Headers;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using webapi.Contract;
+using webapi.Filters;
 using webapi.Implementation;
 using webapi.Models;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -41,6 +42,7 @@ var builder = WebApplication.CreateBuilder(args);
 //                          });
 //});
 
+    
 //Enable CORS
 builder.Services.AddCors(options =>
 {
@@ -218,9 +220,11 @@ builder.Services.AddScoped<ITesTechnicalService, TesTechnicalService>();
 builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IMovieRepository, MovieRepository>();
+builder.Services.AddScoped<IPostRepository, PostRepository>();
 
 builder.Services.AddControllers(options =>
 {
+    options.Filters.Add<UnhandledExceptionFilterAttribute>();//register services
     var cacheProfiles = builder.Configuration
             .GetSection("CacheProfiles")
             .GetChildren();

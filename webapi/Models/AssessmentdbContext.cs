@@ -35,6 +35,12 @@ public partial class AssessmentdbContext : DbContext
 
     public virtual DbSet<Mssale> Mssales { get; set; }
 
+    public virtual DbSet<TblCitiesAngkit> TblCitiesAngkits { get; set; }
+
+    public virtual DbSet<TblEmployeeAngkit> TblEmployeeAngkits { get; set; }
+
+    public virtual DbSet<TblPost> TblPosts { get; set; }
+
     public virtual DbSet<Trinvoice> Trinvoices { get; set; }
 
     public virtual DbSet<Trinvoicedetail> Trinvoicedetails { get; set; }
@@ -184,6 +190,51 @@ public partial class AssessmentdbContext : DbContext
                 .HasColumnName("SalesID");
             entity.Property(e => e.SalesName)
                 .HasMaxLength(50)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<TblCitiesAngkit>(entity =>
+        {
+            entity.HasKey(e => e.CityId).HasName("PK__tblCitie__F2D21A967590C42C");
+
+            entity.ToTable("tblCitiesAngkit");
+
+            entity.Property(e => e.CityId).HasColumnName("CityID");
+            entity.Property(e => e.CityName)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<TblEmployeeAngkit>(entity =>
+        {
+            entity.HasKey(e => e.EmployeeId).HasName("PK__tblEmplo__7AD04FF18F37A2B5");
+
+            entity.ToTable("tblEmployeeAngkit");
+
+            entity.Property(e => e.EmployeeId).HasColumnName("EmployeeID");
+            entity.Property(e => e.City)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.Department)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.Gender)
+                .HasMaxLength(6)
+                .IsUnicode(false);
+            entity.Property(e => e.Name)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<TblPost>(entity =>
+        {
+            entity.HasKey(e => e.PostId).HasName("PK__tblPost__AA126018353C4BC4");
+
+            entity.ToTable("tblPost");
+
+            entity.Property(e => e.Coontent).HasMaxLength(1000);
+            entity.Property(e => e.Title)
+                .HasMaxLength(20)
                 .IsUnicode(false);
         });
 

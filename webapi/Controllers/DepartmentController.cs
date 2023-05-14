@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using webapi.Contract;
+using webapi.Filters;
 using webapi.Models;
 
 namespace webapi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    //[JsonException] //gak bs dipakai ...response di swagger blom rapi sempurna
     public class DepartmentController : ControllerBase
     {
         private readonly IDepartmentRepository _department;
@@ -37,6 +39,7 @@ namespace webapi.Controllers
             }
             return Ok("Added Successfully");
         }
+        
         [HttpPut]
         [Route("UpdateDepartment")]
         public async Task<IActionResult> Put(Department dep)
@@ -53,5 +56,15 @@ namespace webapi.Controllers
             return new JsonResult("Deleted Successfully");
         }
 
+        [HttpPost]
+        [Route("Addtest")]
+        public async Task<IActionResult> Test(string test1req)
+        {
+
+            throw new Exception("test");
+            
+            return Ok("Added Successfully");
+        }
+        
     }
 }

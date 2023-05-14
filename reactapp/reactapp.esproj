@@ -12,6 +12,8 @@
     <BuildOutputFolder>$(MSBuildProjectDirectory)\build</BuildOutputFolder>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="src\Components\" />
+    <Folder Include="src\Components\CRUDAnkit\" />
+    <Folder Include="src\Components\Latihan1\" />
+    <Folder Include="src\Components\CRUDPost\" />
   </ItemGroup>
 </Project>
