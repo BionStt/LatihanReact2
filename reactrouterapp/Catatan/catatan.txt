@@ -1,0 +1,11 @@
+npm i -D react-toastify@latest
+npm i -D sweetalert2@latest
+npm i react-sweetalert2
+npm i -D react-live-clock@latest
+npm i -D react-datepicker@latest
+npm i -D react-tabs@latest
+npm i -D styled-components@latest
+
+npm i -D react-clock@latest
+
+npm install --save sweetalert2 sweetalert2-react-content  
