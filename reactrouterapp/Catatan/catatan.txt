@@ -5,6 +5,9 @@ npm i -D react-live-clock@latest
 npm i -D react-datepicker@latest
 npm i -D react-tabs@latest
 npm i -D styled-components@latest
+npm i -D axios@latest
+npm i -D react-bootstrap@latest
+npm i -D bootstrap@latest
 
 npm i -D react-clock@latest
 
