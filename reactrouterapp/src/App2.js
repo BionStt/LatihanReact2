@@ -8,6 +8,7 @@ import NoPage from './pages/NoPage'
 import Latihan1 from './pages/Latihan1/Latihan1'
 import Latihan2 from './pages/Latihan2/Latihan2'
 import Latihan3 from './pages/Latihan3/Latihan3'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 import React from 'react'
 

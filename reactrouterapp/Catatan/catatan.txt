@@ -1,3 +1,6 @@
+utk reinstall ulang dependencies dengan npm install
+biasa abis clone/pull dari github perlu di reinstall dependenciesnya 
+
 npm i -D react-toastify@latest
 npm i -D sweetalert2@latest
 npm i react-sweetalert2
@@ -8,7 +11,11 @@ npm i -D styled-components@latest
 npm i -D axios@latest
 npm i -D react-bootstrap@latest
 npm i -D bootstrap@latest
+npm i -D zxcvbn@latest
+npm i -D react-icons@latest
 
 npm i -D react-clock@latest
 
+npm install react-icons --save
 npm install --save sweetalert2 sweetalert2-react-content  
+npm install --save react-router-dom

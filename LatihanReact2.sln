@@ -7,6 +7,14 @@ Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "reactapp", "reactapp\reacta
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "webapi", "webapi\webapi.csproj", "{FBD51553-008C-44C5-BE25-31479300A643}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "reactrouterapp", "reactrouterapp", "{EFBFA1F0-61F0-4303-8A35-803F810A225C}"
+	ProjectSection(SolutionItems) = preProject
+		reactrouterapp\.gitignore = reactrouterapp\.gitignore
+		reactrouterapp\package-lock.json = reactrouterapp\package-lock.json
+		reactrouterapp\package.json = reactrouterapp\package.json
+		reactrouterapp\README.md = reactrouterapp\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

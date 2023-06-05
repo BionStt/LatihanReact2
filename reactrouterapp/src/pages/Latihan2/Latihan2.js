@@ -7,6 +7,10 @@ import ContohTabGroup from './Component/ContohTabs/ContohTabGroup'
 import Banner from './Component/Banner'
 import ContohModalExample from './Component/ContohModal/ContohModalExample'
 import Garage from './Component/FuncCompPassData/Garage'
+import SampleInput from './Component/SampleInput'
+import SampleInput2 from './Component/SampleInput2'
+import SignUpForm from './Component/SignUpWithValidation/SignUpForm'
+
 
 
 //berhubungan dengan kode A
@@ -30,6 +34,12 @@ export default function Latihan2() {
   return (
     <div>
        <h1>Haloo Latihan 2 nih</h1>
+       <br/>
+       <h1>Sampple input1 ini dengan controlled component</h1>
+        <SampleInput></SampleInput>
+       <br/>
+       <h1>Sampple input2 ini dengan uncontrolled component</h1>
+        <SampleInput2></SampleInput2>
        <br/>
        <Garage></Garage>
        <br/>
@@ -63,6 +73,13 @@ export default function Latihan2() {
       <br/>
       {/* <TooltipWithClass><TooltipWithClass/> */}
       <br/>
+      <br/>
+      <br/>
+      <h1>signup form</h1>
+    <SignUpForm></SignUpForm>
+      <br/>
+      <br/>
+    
     
 
        </div>
