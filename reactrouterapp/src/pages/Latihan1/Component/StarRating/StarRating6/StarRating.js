@@ -1,6 +1,8 @@
 import React from "react";
-import { createArray } from "./data/color-data.json";
+import { createArray } from "./lib";
+// import { createArray } from "./data/color-data.json";
 import Star from "./Star";
+
 
 export default function StarRating({ totalStars = 5, selectedStars = 0 }) {
   return (

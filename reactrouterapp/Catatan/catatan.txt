@@ -12,10 +12,15 @@ npm i -D axios@latest
 npm i -D react-bootstrap@latest
 npm i -D bootstrap@latest
 npm i -D zxcvbn@latest
+npm i -D react-window@latest
 npm i -D react-icons@latest
+npm i -D react-markdown@latest
+npm i -D react-spinners@latest
+npm i -D uuid@latest
 
-npm i -D react-clock@latest
+npm install  @faker-js/faker
 
+npm install react-icons --save
 npm install react-icons --save
 npm install --save sweetalert2 sweetalert2-react-content  
 npm install --save react-router-dom

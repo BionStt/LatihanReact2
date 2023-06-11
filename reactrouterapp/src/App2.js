@@ -8,6 +8,8 @@ import NoPage from './pages/NoPage'
 import Latihan1 from './pages/Latihan1/Latihan1'
 import Latihan2 from './pages/Latihan2/Latihan2'
 import Latihan3 from './pages/Latihan3/Latihan3'
+import Latihan4 from './pages/Latihan4/Latihan4'
+import Latihan5 from './pages/Latihan5/Latihan5'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import React from 'react'
@@ -24,6 +26,8 @@ export default function App2()  {
             <Route path="latihan1" element={<Latihan1/>}/>
             <Route path="latihan2" element={<Latihan2/>}/>
             <Route path="latihan3" element={<Latihan3/>}/>
+            <Route path="latihan4" element={<Latihan4/>}/>
+            <Route path="latihan5" element={<Latihan5/>}/>
             {/* <Route/> */}
             <Route path="*" element={<NoPage/>}/>
         </Route>    

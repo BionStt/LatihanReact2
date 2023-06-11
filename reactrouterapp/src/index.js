@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import App2 from './App2';
 import AppforMateriRouter from './AppforMateriRouter'
 import AppForMateriCRUD from './AppForMateriCRUD'
+import AppForCompanyWebsite from './AppForCompanyWebsite'
 import 'bootstrap/dist/css/bootstrap.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,9 +14,11 @@ root.render(
   <React.StrictMode>
     {/* <App /> */}
     
-    <App2 />
+    {/* <App2 /> */}
     {/* app2 latihan terkait react router */}
 
+    <AppForCompanyWebsite />
+      {/* latihan react router jg nih  */}
 
     {/* <AppforMateriRouter/> */}
     {/* AppforMateriRouter latihan dari edspert */}

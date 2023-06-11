@@ -23,6 +23,12 @@ const Layout = () => {
             <li>
                 <Link to="/latihan3">Latihan3</Link>
             </li>
+            <li>
+                <Link to="/latihan4">Latihan4</Link>
+            </li>
+            <li>
+                <Link to="/latihan5">Latihan5</Link>
+            </li>
         </ul>
     </nav>
     <Outlet/>

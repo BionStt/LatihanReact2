@@ -23,6 +23,21 @@ import StarRatingOutput from './Component/StarRating/StarRating6/StarRatingOutpu
 import StarRatingOutput2 from './Component/StarRating/StarRating7/StarRatingOutput'
 import StarRatingOutput3 from './Component/StarRating/StarRating8/StarRatingOutput'
 import StarRatingOutput4 from './Component/StarRating/StarRating9/StarRatingOutput'
+import GunakanEffect from './Component/EnhancingComponentsWithHooks/GunakanEffect'
+import GunakanEffectDependencies from './Component/EnhancingComponentsWithHooks/GunakanEffectDependencies'
+import CheckBoxUseStateWithToggle from './Component/EnhancingComponentsWithHooks/CheckBoxUseStateWithToggle'
+import CheckBoxWithuseReducer from './Component/EnhancingComponentsWithHooks/CheckBoxWithuseReducer/CheckBoxWithuseReducer'
+import IncrementNumberWithuseReducer from './Component/EnhancingComponentsWithHooks/IncrementNumberWithuseReducer'
+import UseStateWithObject from './Component/EnhancingComponentsWithHooks/UseStateWithObject'
+import UseReducerWithObject from './Component/EnhancingComponentsWithHooks/UseReducerWithObject'
+import LegacyUseStatedenganUseReducer from './Component/EnhancingComponentsWithHooks/LegacyUseStatedenganUseReducer'
+import FetchWithUseEffect from './Component/EnhancingComponentsWithHooks/FetchWithUseEffect'
+import FetchUseEffectdenganFunctionTerpisah from './Component/EnhancingComponentsWithHooks/FetchUseEffectdenganFunctionTerpisah'
+import FetchComponentWithLocalStorage from './Component/EnhancingComponentsWithHooks/FetchComponentWithLocalStorage'
+import HandlingPromiseStateusingfecthdanEffect from './Component/EnhancingComponentsWithHooks/HandlingPromiseStateusingfecthdanEffect'
+
+
+
 
 const Latihan1 = () => {
   const data = [
@@ -79,6 +94,54 @@ const Latihan1 = () => {
         <br/>
         <br/>
         <StarRatingOutput4></StarRatingOutput4>
+        <br/>
+        <br/>
+        <p>gunakan useeffect </p>
+        <GunakanEffect></GunakanEffect>
+        <br/>
+        <br/>
+        <p>gunakan effect dependencies</p>
+        <GunakanEffectDependencies></GunakanEffectDependencies>
+        <br/>
+        <br/>
+        <p>increment number with useReducer</p>
+        <IncrementNumberWithuseReducer></IncrementNumberWithuseReducer>
+        <br/>
+        <br/>
+        <p>check box dengan useState dan toggles</p>
+        <CheckBoxUseStateWithToggle></CheckBoxUseStateWithToggle>
+        <br/>
+        <br/>
+        <p>checkbox with useReducer</p>
+        <CheckBoxWithuseReducer></CheckBoxWithuseReducer>
+        <br/>
+        <br/>
+        <p>useState dengan object</p>
+        <UseStateWithObject></UseStateWithObject>
+        <br/>
+        <br/>
+        <p>useReducer dengan object</p>
+        <UseReducerWithObject></UseReducerWithObject>
+        <br/>
+        <br/>
+        <p></p>
+        <LegacyUseStatedenganUseReducer></LegacyUseStatedenganUseReducer>
+        <br/>
+        <br/>
+        <p>fetch with useEffect dan usestate</p>
+        <FetchWithUseEffect login="bionstt" ></FetchWithUseEffect>
+        <br/>
+        <br/>
+        <p>useEffecet dengan panggil fucntion terpisah </p>
+        <FetchUseEffectdenganFunctionTerpisah login="bionstt"></FetchUseEffectdenganFunctionTerpisah>
+        <br/>
+        <br/>
+        <p>fetch component with local storage</p>
+        <FetchComponentWithLocalStorage login="bionstt"></FetchComponentWithLocalStorage>
+        <br/>
+        <br/>
+        <p>Handling promise state dari usefetch and useEffect.</p>
+        <HandlingPromiseStateusingfecthdanEffect login="bionstt"></HandlingPromiseStateusingfecthdanEffect>
         <br/>
         <br/>
         <Menu recipes={data1}></Menu>
