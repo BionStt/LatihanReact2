@@ -7,6 +7,7 @@ import App2 from './App2';
 import AppforMateriRouter from './AppforMateriRouter'
 import AppForMateriCRUD from './AppForMateriCRUD'
 import AppForCompanyWebsite from './AppForCompanyWebsite'
+import AppForCRUDMovie from './AppForCRUDMovie'
 import 'bootstrap/dist/css/bootstrap.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,7 +18,7 @@ root.render(
     {/* <App2 /> */}
     {/* app2 latihan terkait react router */}
 
-    <AppForCompanyWebsite />
+    {/* <AppForCompanyWebsite /> */}
       {/* latihan react router jg nih  */}
 
     {/* <AppforMateriRouter/> */}
@@ -27,7 +28,7 @@ root.render(
     {/* <AppForMateriCRUD/> */}
     {/* AppForMateriCRUD latihan edspert */}
 
-
+    <AppForCRUDMovie/>
 
   </React.StrictMode>
 );

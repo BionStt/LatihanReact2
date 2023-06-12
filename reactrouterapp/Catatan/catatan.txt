@@ -17,6 +17,9 @@ npm i -D react-icons@latest
 npm i -D react-markdown@latest
 npm i -D react-spinners@latest
 npm i -D uuid@latest
+npm i -D react-toastify@latest
+npm i -D axios@latest
+npm i -D semantic-ui-react semantic-ui-css@latest
 
 npm install  @faker-js/faker
 

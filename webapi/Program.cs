@@ -42,7 +42,10 @@ var builder = WebApplication.CreateBuilder(args);
 //                          });
 //});
 
-    
+//builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
+//{
+//    builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+//}));
 //Enable CORS
 builder.Services.AddCors(options =>
 {
@@ -305,6 +308,7 @@ app.UseStaticFiles(new StaticFileOptions
 //app.UseCors(MyAllowSpecificOrigins);
 //app.UseCors();
 app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+//app.UseCors("corsapp");
 
 app.UseHttpsRedirection();
 
