@@ -45,6 +45,8 @@ public partial class AssessmentdbContext : DbContext
 
     public virtual DbSet<Trinvoicedetail> Trinvoicedetails { get; set; }
 
+    public virtual DbSet<User> Users { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Data Source=DGLNLO-821684-1;Initial Catalog=assessmentdb;Integrated Security=True;Trust Server Certificate=true");
@@ -270,6 +272,24 @@ public partial class AssessmentdbContext : DbContext
                 .IsUnicode(false);
             entity.Property(e => e.Price).HasColumnType("decimal(10, 0)");
             entity.Property(e => e.ProductId).HasColumnName("ProductID");
+        });
+
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.HasKey(e => e.UsersId);
+
+            entity.Property(e => e.Email)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.FirstName)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.LastName)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.Phone)
+                .HasMaxLength(50)
+                .IsUnicode(false);
         });
 
         OnModelCreatingPartial(modelBuilder);
