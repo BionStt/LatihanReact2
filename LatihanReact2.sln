@@ -15,6 +15,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "reactrouterapp", "reactrout
 		reactrouterapp\README.md = reactrouterapp\README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LatihanReactRouter", "LatihanReactRouter", "{70431AFC-A6BF-4DB9-9BEE-0F427288F155}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "latihanreact", "LatihanReact\latihanreact.esproj", "{CE049E01-5BCB-4314-94FE-F173EEF1AC6B}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "latihanrouter2", "LatihanRouter2\latihanrouter2.esproj", "{21E28BA2-9A10-452F-AAD0-5EA768FC320B}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "latihanreactrouterv6auth", "latihanreactrouterv6auth\latihanreactrouterv6auth.esproj", "{AD21B2C9-961B-42B7-A388-46AE4E5F1CFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,9 +39,30 @@ Global
 		{FBD51553-008C-44C5-BE25-31479300A643}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBD51553-008C-44C5-BE25-31479300A643}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBD51553-008C-44C5-BE25-31479300A643}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE049E01-5BCB-4314-94FE-F173EEF1AC6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE049E01-5BCB-4314-94FE-F173EEF1AC6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE049E01-5BCB-4314-94FE-F173EEF1AC6B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CE049E01-5BCB-4314-94FE-F173EEF1AC6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE049E01-5BCB-4314-94FE-F173EEF1AC6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE049E01-5BCB-4314-94FE-F173EEF1AC6B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{21E28BA2-9A10-452F-AAD0-5EA768FC320B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21E28BA2-9A10-452F-AAD0-5EA768FC320B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21E28BA2-9A10-452F-AAD0-5EA768FC320B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{21E28BA2-9A10-452F-AAD0-5EA768FC320B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21E28BA2-9A10-452F-AAD0-5EA768FC320B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21E28BA2-9A10-452F-AAD0-5EA768FC320B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{AD21B2C9-961B-42B7-A388-46AE4E5F1CFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD21B2C9-961B-42B7-A388-46AE4E5F1CFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD21B2C9-961B-42B7-A388-46AE4E5F1CFA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{AD21B2C9-961B-42B7-A388-46AE4E5F1CFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD21B2C9-961B-42B7-A388-46AE4E5F1CFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD21B2C9-961B-42B7-A388-46AE4E5F1CFA}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CE049E01-5BCB-4314-94FE-F173EEF1AC6B} = {70431AFC-A6BF-4DB9-9BEE-0F427288F155}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {289E2DE1-EAE0-46A3-8AC0-CD5ED9E91728}
