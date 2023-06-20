@@ -16,7 +16,7 @@ class ListUserComponent extends Component {
       this.editUser = this.editUser.bind(this);
       this.deleteUser = this.deleteUser.bind(this);
 
-      let navigate = useNavigate();
+    //   let navigate = useNavigate();
   }
   
 

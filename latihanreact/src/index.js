@@ -9,6 +9,7 @@ import AppForMateriCRUD from './AppForMateriCRUD'
 import AppForCompanyWebsite from './AppForCompanyWebsite'
 import AppForCRUDMovie from './AppForCRUDMovie'
 import 'bootstrap/dist/css/bootstrap.css';
+import AppForReduxToolkit from './AppForReduxToolkit'
 
 import AppForCRUDUsers from './AppForCRUDUsers'
 
@@ -32,8 +33,12 @@ root.render(
 
     {/* <AppForCRUDMovie/> */}
 
-    <AppForCRUDUsers/>
+    {/* <AppForCRUDUsers/> */}
 
+    <AppForReduxToolkit/>
+
+
+    
   </React.StrictMode>
 );
 
