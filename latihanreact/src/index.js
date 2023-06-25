@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import AppForReduxToolkit from './AppForReduxToolkit'
 
 import AppForCRUDUsers from './AppForCRUDUsers'
+import AppForCRUDHook from './AppForCRUDHook'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -35,7 +36,9 @@ root.render(
 
     {/* <AppForCRUDUsers/> */}
 
-    <AppForReduxToolkit/>
+    {/* <AppForReduxToolkit/> */}
+
+    <AppForCRUDHook/>
 
 
     
