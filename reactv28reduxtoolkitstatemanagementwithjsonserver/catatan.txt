@@ -1,0 +1,9 @@
+npm install -g json-server
+
+
+didlm packge json 
+"json-server":"json-server --watch db.json --port 4000"
+
+
+npm run json-server
+
